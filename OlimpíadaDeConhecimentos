@@ -1,0 +1,61 @@
+programa {
+  funcao inicio() {
+    // Declaração de variáveis
+  numTurmas, numAlunos, turma, aluno, turmaVencedora: inteiro
+  nota, somaNotas, media, melhorMedia: real
+
+   //Entrada: número de turmas
+
+   Escreva ("Quantas turmas existem no colégio? ")
+   Leia (numTurmas)
+
+   melhorMedia <- -1
+   turmaVencedora <- -1
+
+   // Verificar se há turmas
+   Se numTurmas <= 0 então
+      Escreva("Não há turmas para calcular médias.")
+      Pare
+   FimSe
+
+   // Para cada turma
+   Para turma <- 1 até numTurmas faca
+      Escreva("Quantos alunos existem na turma", turma, "? ")
+      leia(numAlunos)
+
+      // Verificar se há alunos na turma
+      Se numAlunos <= 0 então
+         Escreva("A turma ", turma, " não possui alunos.")
+      Senão
+         somaNotas <- 0
+
+         // Para cada aluno na turma
+         Para aluno <-1 até numAlunos faca
+            Escreva("Digite a nota do aluno ", aluno, " da turma", turma, ": ")
+            Leia(nota)
+            somaNotas <- somaNotas + nota
+         FimPara
+
+         // Calcular a média da turma
+         media <- somaNotas / numAlunos
+         Escreval("A média da turma ", turma, " é: ", media)
+
+         //Verificar se é a melhor média
+         Se media > melhorMedia Então
+            melhorMedia <- media
+            turmaVencedora <- turma
+         FimSe
+      FimSe
+   FimPara
+
+   // Mostrar a turma turmaVencedora
+   Se TurmaVencedora > 0 então
+      Escreva ("A turma vencedora é a turma ", turmaVencedora, " com a média ", melhorMedia)
+   Senão
+      Escreva("Nenhuma turma válida foi registrada.")
+   FimSe
+
+
+FimAlgoritmo
+}
+}
